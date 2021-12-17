@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "9288dd05-b0a5-4655-a082-8298a326828c",
+		"name": "OMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": 1,\n    \"orderType\": \"BULK\",\n    \"orderDate\": \"2021-08-11T00:00:00.000+00:00\",\n    \"expDeliveryDate\": \"2021-08-16T00:00:00.000+00:00\",\n    \"deliveredDate\": null,\n    \"orderStatus\": \"PROCESSING\",\n    \"orderAddress\": \"Govandi\",\n    \"addressType\": \"HOME\",\n    \"orderDetails\": \"One Home Theater\",\n    \"billingStatus\": \"PAID\",\n    \"active\": false,\n    \"prepaid\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/v1/orders/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"v1",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
