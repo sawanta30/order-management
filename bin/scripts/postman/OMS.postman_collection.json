@@ -8,10 +8,27 @@
 		{
 			"name": "Add Order",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderType\":\"SINGLE\",\n    \"orderDate\": \"2021-08-11\",\n    \"expDeliveryDate\": \"2021-08-16\",\n    \"orderStatus\": \"NEW\",\n    \"orderAddress\": \"Govandi\",\n    \"addressType\": \"HOME\",\n    \"orderDetails\": \"One Home Theater\",\n    \"prepaid\": true,\n    \"billingStatus\": \"PAID\",\n    \"active\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": ""
+					"raw": "localhost:8088/v1/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"v1",
+						"orders"
+					]
 				}
 			},
 			"response": []
@@ -52,6 +69,36 @@
 						"orders",
 						"1"
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/v1/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
 				}
 			},
 			"response": []
