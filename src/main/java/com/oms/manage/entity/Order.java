@@ -1,6 +1,7 @@
 package com.oms.manage.entity;
 
 import com.oms.manage.enums.AddressType;
+import com.oms.manage.enums.BillingStatus;
 import com.oms.manage.enums.OrderStatus;
 import com.oms.manage.enums.OrderType;
 
@@ -41,12 +42,12 @@ public class Order implements Serializable {
     private AddressType addressType;
     @Column(name = "orderDetails")
     private String orderDetails;
-    @Column(name = "isPrepaid")
-    private boolean isPrepaid;
+    @Column(name = "prepaid")
+    private boolean prepaid;
     @Column(name = "billingStatus")
     private BillingStatus billingStatus;
-    @Column(name = "isActive")
-    private boolean isActive;
+    @Column(name = "active")
+    private boolean active;
 
     public long getOrderId() {
         return orderId;
@@ -120,12 +121,12 @@ public class Order implements Serializable {
         this.orderDetails = orderDetails;
     }
 
-    public boolean isPrepaid() {
-        return isPrepaid;
+    public boolean getPrepaid() {
+        return prepaid;
     }
 
     public void setPrepaid(boolean prepaid) {
-        isPrepaid = prepaid;
+        this.prepaid = prepaid;
     }
 
     public BillingStatus getBillingStatus() {
@@ -136,11 +137,11 @@ public class Order implements Serializable {
         this.billingStatus = billingStatus;
     }
 
-    public boolean isActive() {
-        return isActive;
+    public boolean getActive() {
+        return active;
     }
 
     public void setActive(boolean active) {
-        isActive = active;
+        this.active = active;
     }
 }

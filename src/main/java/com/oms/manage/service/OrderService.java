@@ -13,6 +13,6 @@ public interface OrderService {
     List<Order> getAllOrders();
     Order getOrder(long orderId);
     boolean deleteOrder(long orderId);
-    Order updateOrder(Order order);
+    Order updateOrder(Order order, long orderId);
 
 }
