@@ -1,5 +1,8 @@
 package com.oms.manage.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oms.manage.activemq.ActiveMQProducer;
 import com.oms.manage.entity.Order;
 import com.oms.manage.service.OrderService;
 import org.slf4j.Logger;
@@ -18,9 +21,19 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
+    @Autowired
+    ActiveMQProducer activeMQProducer;
+
     @RequestMapping(value = "/orders", method = RequestMethod.POST)
     public Order addOrder(@RequestBody Order order) {
         log.info("Received request for adding order");
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            String orderJsonStr = mapper.writeValueAsString(order);
+            activeMQProducer.sendMessageToOMSPublisherTopic(orderJsonStr);
+        } catch (JsonProcessingException e) {
+            log.error("Json parsing error :"+e.getMessage());
+        }
         return orderService.addOrder(order);
     }
 
