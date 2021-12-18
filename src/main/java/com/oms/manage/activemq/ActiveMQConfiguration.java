@@ -16,7 +16,7 @@ import javax.jms.Topic;
 
 @Configuration
 @EnableJms
-@PropertySource("osm-dev-config.properties")
+@PropertySource("classpath:osm-dev-config.properties")
 public class ActiveMQConfiguration {
 
 

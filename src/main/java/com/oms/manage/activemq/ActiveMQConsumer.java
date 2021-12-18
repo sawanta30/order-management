@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.jms.Queue;
 
 @Component
-@PropertySource("osm-dev-config.properties")
+@PropertySource("classpath:osm-dev-config.properties")
 public class ActiveMQConsumer {
 
     private static final Logger log = LoggerFactory.getLogger(ActiveMQConsumer.class);
