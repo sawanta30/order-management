@@ -1,0 +1,20 @@
+{
+  "payload": {
+    "orderId": 2,
+    "orderType": "BULK",
+    "orderDate": "2021-08-11T00:00:00.000+00:00",
+    "expDeliveryDate": "2021-08-16T00:00:00.000+00:00",
+    "deliveredDate": null,
+    "orderStatus": "IN_TRANSIT",
+    "orderAddress": "ASISI NAGAR",
+    "addressType": "HOME",
+    "orderDetails": "One Home Theater",
+    "billingStatus": "PAID",
+    "active": true,
+    "prepaid": false
+  },
+  "timestamp": 1639900022,
+  "eventId": 100102,
+  "event": "CANCEL",
+  "orderId": 2
+}
